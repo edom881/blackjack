@@ -19,5 +19,29 @@ public class Hand {
             System.out.println(card);
         }
     }
+    public int getScore() {
+        int score = 0;
+        int aceCount = 0;
+
+        for (card card : cards) {
+            String value = card.getValue();
+
+            if (value.equals("Ace")) {
+                score += 11;
+                aceCount++;
+            } else if (value.equals("King") || value.equals("Queen") || value.equals("Jack")) {
+                score += 10;
+            } else {
+                score += Integer.parseInt(value);
+            }
+        }
+
+        while (score > 21 && aceCount > 0) {
+            score -= 10;
+            aceCount--;
+        }
+
+        return score;
+    }
 }
 
