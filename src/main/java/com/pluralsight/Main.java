@@ -18,6 +18,10 @@ public class Main {
         System.out.println();
         System.out.println("Player 1: " + player1Name);
         System.out.println("Player 2: " + player2Name);
-    }
-}
 
+        card testCard = new card("Hearts", "Ace");
+
+        System.out.println(testCard);
+    }
+
+}
