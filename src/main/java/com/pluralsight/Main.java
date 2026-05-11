@@ -20,12 +20,11 @@ public class Main {
         System.out.println("Player 2: " + player2Name);
 
 
-
         //Deck deck = new Deck();
-       // deck.shuffle();
+        // deck.shuffle();
 
         //System.out.println("Dealt card: " + deck.dealCard());
-       // System.out.println("Dealt card: " + deck.dealCard());
+        // System.out.println("Dealt card: " + deck.dealCard());
         Deck deck = new Deck();
         deck.shuffle();
 
@@ -48,6 +47,24 @@ public class Main {
         System.out.println();
         System.out.println(player2Name + "'s Hand:");
         player2Hand.displayHand();
-    }
 
+        int player1Score = player1Hand.getScore();
+        int player2Score = player2Hand.getScore();
+
+        System.out.println();
+
+        if (player1Score > 21 && player2Score > 21) {
+            System.out.println("Both players busted. No winner.");
+        } else if (player1Score > 21) {
+            System.out.println(player2Name + " wins!");
+        } else if (player2Score > 21) {
+            System.out.println(player1Name + " wins!");
+        } else if (player1Score > player2Score) {
+            System.out.println(player1Name + " wins!");
+        } else if (player2Score > player1Score) {
+            System.out.println(player2Name + " wins!");
+        } else {
+            System.out.println("It's a tie!");
+        }
+    }
 }
