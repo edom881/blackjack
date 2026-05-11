@@ -21,11 +21,33 @@ public class Main {
 
 
 
+        //Deck deck = new Deck();
+       // deck.shuffle();
+
+        //System.out.println("Dealt card: " + deck.dealCard());
+       // System.out.println("Dealt card: " + deck.dealCard());
         Deck deck = new Deck();
         deck.shuffle();
 
-        System.out.println("Dealt card: " + deck.dealCard());
-        System.out.println("Dealt card: " + deck.dealCard());
+        // create player hands
+        Hand player1Hand = new Hand();
+        Hand player2Hand = new Hand();
 
+// deal 2 cards to each player
+        player1Hand.addCard(deck.dealCard());
+        player1Hand.addCard(deck.dealCard());
+
+        player2Hand.addCard(deck.dealCard());
+        player2Hand.addCard(deck.dealCard());
+
+// display hands
+        System.out.println();
+        System.out.println(player1Name + "'s Hand:");
+        player1Hand.displayHand();
+
+        System.out.println();
+        System.out.println(player2Name + "'s Hand:");
+        player2Hand.displayHand();
     }
+
 }
